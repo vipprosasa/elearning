@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div>
+    <div style="padding: 0 24px">
+      <nz-input-group [nzPrefix]="searchIcon">
+        <input (keyup.enter)="onSearch($event)" type="text" nz-input placeholder="Tìm kiếm" />
+      </nz-input-group>
+      <ng-template #searchIcon>
+        <i nz-icon nzType="search"></i>
+      </ng-template>
+    </div>
+    <ul nz-menu nzMode="inline">
+      <li nz-menu-item *ngFor="let menu of menus" [routerLink]="menu.link">
+        <i nz-icon [nzType]="menu.icon"></i>
+        <span [innerText]="menu.text"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="user" style="padding: 0 24px" *ngIf="currentUser">
+    <nz-avatar [nzSize]="42" nzIcon="user" [nzSrc]="currentUser?.profileUrl">
+    </nz-avatar>
+    <div class="info">
+      <div class="fullname">{{currentUser.fullname}}</div>
+      <div class="logout" (click)="logout()">Đăng xuất</div>
+    </div>
+  </div>
+</div>

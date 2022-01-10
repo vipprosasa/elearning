@@ -1,0 +1,35 @@
+<div class="course-detail">
+  <div class="course-name">Bài {{currentLesson?.order}}: {{currentLesson?.name}}</div>
+  <div nz-row>
+    <div nz-col nzSm="16">
+      <div class="course-view">
+        <iframe class="video" width="100%" height="450" [src]="currentLesson.videoUrl | safe"
+          title="YouTube video player" frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div nz-col nzSm="8">
+      <div class="course-lessons">
+        <div *ngFor="let item of course.lessons" class="lesson"
+          [ngClass]="{current: item.order === currentLesson?.order}"
+          (click)="clickLesson(item)"
+        >
+          <div class="icon">
+            <i nz-icon nzType="play-circle" nzTheme="outline"></i>
+          </div>
+          <div class="info">
+            <div class="name">Bài {{item.order}}: {{item.name}}</div>
+            <div class="detail">
+              <div>Thời lượng: {{item.totalTime}}</div>
+              <div>Bài tập cần hoàn thành {{item.lessonNeedCompleted}}</div>
+            </div>
+          </div>
+          <div class="icon-completed"
+            [ngClass]="{completed: item.isCompleted}">
+            <i nz-icon nzType="check-circle" nzTheme="outline"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

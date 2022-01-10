@@ -1,0 +1,25 @@
+<div class="course-item">
+  <a [routerLink]="'/courses/' + course.slug" class="img">
+    <img [src]="course.imageUrl" />
+  </a>
+  <div class="details">
+    <a [routerLink]="'/courses/' + course.slug" class="name">{{course.name}}</a>
+    <div>
+      <div class="info">
+        <div>Ngày bắt đầu</div>
+        <div>{{course.startDate | date: 'dd/MM/yyyy'}}</div>
+      </div>
+      <div class="info">
+        <div>Tổng thời gian</div>
+        <div>{{course.totalTime}} tiếng</div>
+      </div>
+      <div class="info">
+        <div>Giảng viên</div>
+        <div>
+          <div *ngFor="let item of course.lecturers">{{item}}</div>
+        </div>
+      </div>
+    </div>
+    <a class="more" [routerLink]="'/courses/' + course.slug">Tìm hiểu thêm</a>
+  </div>
+</div>

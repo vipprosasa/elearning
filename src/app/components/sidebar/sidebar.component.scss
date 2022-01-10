@@ -1,0 +1,39 @@
+.sidebar {
+  padding: 64px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #fcffff;
+  
+  .ant-menu-item {
+    color: #203256;
+    i {
+      color: #ef8632;
+    }
+  }
+  .ant-menu-item-selected {
+    background-color: #f3f7f7;
+    color: #203256;
+  }
+  .ant-menu-item-selected::after {
+    display: none;
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    .info {
+      padding-left: 10px;
+      .fullname {
+        font-weight: bold;
+        font-size: 15px;
+        color: #15294f;
+      }
+      .logout {
+        color: #0093ff;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

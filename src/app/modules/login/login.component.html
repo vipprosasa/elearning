@@ -1,0 +1,19 @@
+<div class="login">
+  <form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group>
+          <input type="text" nz-input formControlName="username" placeholder="Tài khoản" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group>
+          <input type="password" nz-input formControlName="password" placeholder="Mật khẩu" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button class="" [nzType]="'primary'">Log in</button>
+  </form>
+</div>

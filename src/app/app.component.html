@@ -1,0 +1,18 @@
+<nz-layout>
+  <nz-layout>
+    <nz-header>
+      <header [authenticated]="authenticated" ></header>
+      <i *ngIf="authenticated" class="trigger" nz-icon [nzType]="'menu'" (click)="isCollapsed = !isCollapsed"></i>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>E-Learning ©2021</nz-footer>
+  </nz-layout>
+  <nz-sider [nzWidth]="300" [nzTheme]="'light'" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null"
+    nzReverseArrow [nzCollapsedWidth]="0">
+    <sidebar></sidebar>
+  </nz-sider>
+</nz-layout>
